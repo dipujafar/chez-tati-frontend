@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/shared/Navbar";
+import {Figtree} from "next/font/google"
+import Footer from "@/components/shared/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-figtree",
+  display: "swap"
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,10 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${figtree.variable} antialiased`}
       >
+        <Navbar></Navbar>
+        <div className="min-h-[calc(100vh-121px)]">
         {children}
+        </div>
+        <Footer></Footer>
       </body>
     </html>
   );
 }
+
