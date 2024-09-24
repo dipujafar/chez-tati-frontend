@@ -1,17 +1,16 @@
-import SignForm from "@/components/(auth)/sign-in/SignForm";
+import SignUpForm from "@/components/(auth)/sign-up/SignUpForm";
 import Container from "@/components/shared/Container";
 import TopbarBanner from "@/components/shared/TopbarBanner";
 
-
-const SignPage = () => {
+const SignUpPage = () => {
   return (
     <div>
       <TopbarBanner></TopbarBanner>
       <Container className="mt-[70px] flex justify-center">
-        <SignForm></SignForm>
+       <SignUpForm></SignUpForm>
       </Container>
     </div>
   );
 };
 
-export default SignPage;
+export default SignUpPage;

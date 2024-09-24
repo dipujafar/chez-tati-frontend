@@ -1,28 +1,23 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 // Define form data types
 interface FormData {
   email: string;
   password: string;
+  confirmPassword: string;
 }
 
-const SignForm = () => {
+const SetNewPassForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setConfirmShowPassword] = useState(false);
+  const router = useRouter()
 
   const {
     register,
@@ -30,42 +25,22 @@ const SignForm = () => {
     formState: { errors },
   } = useForm<FormData>();
 
- 
   const onSubmit = (data: FormData) => {
     console.log(data);
+    router.push("/sign-in")
   };
 
   return (
     <div>
-      <Card className="lg:w-[650px]">
+      <Card className="md:w-[650px]">
         <CardHeader>
           <CardTitle className="text-4xl text-center font-semibold">
-            Sign In
+            Set New Password
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid w-full items-center gap-4">
-              {/* Input email */}
-              <div className="flex flex-col space-y-1.5">
-                <Input
-                  id="email"
-                  placeholder="Email"
-                  type="email"
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value:
-                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                      message: "Please enter a valid email address",
-                    },
-                  })}
-                />
-                {errors.email && (
-                  <p className="text-red-500 text-sm">{errors.email.message}</p>
-                )}
-              </div>
-
               {/* Input password with eye icon to toggle visibility */}
               <div className="flex flex-col space-y-1.5 relative">
                 <Input
@@ -94,37 +69,45 @@ const SignForm = () => {
                 </div>
               </div>
 
-              {/* Remember me and forget password section */}
-              <div className="flex flex-col md:flex-row justify-between gap-y-3 ">
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="terms" />
-                  <label htmlFor="terms" className="text-secondary-gray">
-                    Remember me
-                  </label>
+              {/* Input Confirm Password with eye icon to toggle visibility */}
+              <div className="flex flex-col space-y-1.5 relative">
+                <Input
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  type={showPassword ? "text" : "password"}
+                  {...register("confirmPassword", {
+                    required: "Confirm Password is required",
+                  })}
+                />
+                {errors.confirmPassword && (
+                  <p className="text-red-500 text-sm">
+                    {errors.confirmPassword.message}
+                  </p>
+                )}
+                {/* Eye icon to toggle password visibility */}
+                <div
+                  className="absolute right-3 top-1/3 transform -translate-y-1/2 cursor-pointer"
+                  onClick={() => setConfirmShowPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? (
+                    <EyeOff color="#1A1A1A" />
+                  ) : (
+                    <Eye color="#1A1A1A" />
+                  )}
                 </div>
-                <Link href="/forget-password">
-                  <p className="text-secondary-gray">Forget Password</p>
-                </Link>
               </div>
+
 
               {/* Login button */}
               <Button type="submit" className="bg-primay-color rounded-full">
-                Login
+                Create Account
               </Button>
             </div>
           </form>
         </CardContent>
-
-        {/* Footer with link to register */}
-        <CardFooter className="flex justify-center gap-1">
-          <p className="text-secondary-gray">Don’t have account?</p>
-          <Link href={"/sign-up"}>
-            <span className="text-lg font-medium"> Register </span>
-          </Link>
-        </CardFooter>
       </Card>
     </div>
   );
 };
 
-export default SignForm;
+export default SetNewPassForm;
