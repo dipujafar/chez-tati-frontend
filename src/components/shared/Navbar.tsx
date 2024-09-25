@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="flex w-1/2 items-center relative ">
             <Input type="email" placeholder="Search" className="pl-10" />
             <Search className="absolute left-2 font-light" size={20} />
-            <Button type="submit" className="absolute bg-primay-color right-0 rounded-l-none">
+            <Button type="submit" className="absolute bg-primary-color right-0 rounded-l-none">
               Search
             </Button>
           </div>

@@ -98,7 +98,7 @@ const SetNewPassForm = () => {
 
 
               {/* Login button */}
-              <Button type="submit" className="bg-primay-color rounded-full">
+              <Button type="submit" className="bg-primary-color rounded-full">
                 Create Account
               </Button>
             </div>

@@ -1,12 +1,16 @@
 import HeroSection from "./HeroSection";
+import TrendingProducts from "./TrendingProducts";
 
 
 const HomePageContainer = () => {
     return (
-        <div>
+        <>
             <hr />
+            <div className="space-y-28">
             <HeroSection></HeroSection>
-        </div>
+            <TrendingProducts></TrendingProducts>
+            </div>
+        </>
     );
 };
 

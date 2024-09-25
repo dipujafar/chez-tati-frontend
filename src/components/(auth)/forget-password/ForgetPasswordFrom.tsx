@@ -55,7 +55,7 @@ const ForgetPasswordFrom = () => {
               </div>
 
               {/* Login button */}
-              <Button type="submit" className="bg-primay-color rounded-full">
+              <Button type="submit" className="bg-primary-color rounded-full">
                 Submit
               </Button>
             </div>

@@ -50,12 +50,13 @@ const config: Config = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-			"primay-color": "#EA5326",
+			"primary-color": "#EA5326",
 			"light-black": "##4E4E4E",
 			"primary-white": "#F8FAFC",
 			"primary-black": "#232323",
 			"primary-gray": "#929394",
 			"secondary-gray": "#1A1A1A",
+			"primary-red": "#EB2926"
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
