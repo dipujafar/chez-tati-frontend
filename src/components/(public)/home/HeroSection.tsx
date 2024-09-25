@@ -3,7 +3,6 @@ import img2 from "@/assets/images/home_bg_2.png";
 import img3 from "@/assets/images/home_bg_3.png";
 import img4 from "@/assets/images/hero-image-5.png";
 import img5 from "@/assets/images/hero-image-6.png";
-import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -36,7 +35,7 @@ const carouselData = [
 
 const HeroSection = () => {
   return (
-    <Container className="mt-6">
+    <div className="mt-6">
       <div>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-3 xl:max-h-[650px] overflow-hidden">
           <div className="col-span-2 rounded-md">
@@ -146,7 +145,7 @@ const HeroSection = () => {
           </h1>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

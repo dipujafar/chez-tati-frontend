@@ -1,5 +1,4 @@
 "use client";
-import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react"; // Importing arrow icons
@@ -93,7 +92,7 @@ const TrendingProducts = () => {
   };
 
   return (
-    <Container>
+    <div>
       <hr />
       {/* title and category list */}
       <div className="mt-8 flex justify-between items-center flex-col lg:flex-row gap-y-3">
@@ -133,7 +132,7 @@ const TrendingProducts = () => {
             className={`cursor-pointer ${
               startIndex + visibleCategoriesCount >= categories.length
                 ? "text-gray-400 cursor-not-allowed"
-                : "text-black"
+                : "text-black du"
             }`}
             size={24}
           />
@@ -149,17 +148,17 @@ const TrendingProducts = () => {
               alt="product_image"
               width={1950}
               height={1000}
-              className="max-w-[500px] max-h-[286px] rounded-xl"
+              className=" max-h-[286px] rounded-xl w-full"
             ></Image>
             <h1 className="text-primary-black font-medium">{product?.name}</h1>
             <p className="text-primary-gray font-medium">${product?.price}</p>
-            <div className="absolute top-2 right-4 size-10 rounded-full bg-primary-black flex justify-center items-center group">
+            <div className="absolute top-2 right-2 size-10 rounded-full bg-primary-black flex justify-center items-center group">
               <Heart color="#fff" className="cursor-pointer" />
             </div>
           </div>
         ))}
       </div>
-    </Container>
+    </div>
   );
 };
 

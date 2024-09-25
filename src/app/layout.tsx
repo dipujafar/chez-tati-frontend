@@ -13,7 +13,7 @@ const figtree = Figtree({
 
 export const metadata: Metadata = {
   title: {
-    default: "Home Page| Chez Tati ",
+    default: "Home Page | Chez Tati ",
     template: "%s | Chez tati",
   },
   description: "This is Official Application for Chez Tati",
@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${figtree.variable} antialiased`}
       >
         <Navbar></Navbar>
-        <div className="min-h-[calc(100vh-121px)] pb-5">
+        <div className="min-h-[calc(100vh-121px)] pb-24">
         {children}
         </div>
         <Footer></Footer>

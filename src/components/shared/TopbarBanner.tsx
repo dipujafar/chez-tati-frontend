@@ -7,7 +7,7 @@ import { ChevronRight, House } from "lucide-react";
 const TopbarBanner = () => {
   const pathName = usePathname();
   return (
-    <div className={`w-full h-[120px] bg-topbar-image flex items-center `}>
+    <div className={`w-full h-[120px] bg-topbar-image flex items-center bg-no-repeat bg-cover `}>
       <div>
         <Container>
           <div className="h-full flex gap-3 items-center">

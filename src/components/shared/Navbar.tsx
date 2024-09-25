@@ -1,11 +1,10 @@
+"use client"
 import Image from "next/image";
 import Container from "./Container";
 import logo from "@/assets/images/logo.png";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Heart, Search, ShoppingCart } from "lucide-react";
-
-import Link from "next/link";
 import {
   Select,
   SelectContent,
@@ -14,6 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const categories = [
   {
@@ -25,33 +26,41 @@ const categories = [
     value: "laptop",
   },
   {
-    label: "Washing Machine ",
+    label: "Washing Machine",
     value: "washing-machine",
   },
   {
-    label: "Iron ",
+    label: "Iron",
     value: "iron",
   },
   {
-    label: "Freeze ",
+    label: "Freeze",
     value: "freeze",
   },
   {
-    label: "Tv ",
+    label: "Tv",
     value: "tv",
   },
-
   {
-    label: "Air Conditioner ",
-    value: "air-Conditioner",
+    label: "Air Conditioner",
+    value: "air-conditioner",
   },
   {
-    label: "Headphone ",
+    label: "Headphone",
     value: "headphone",
   },
 ];
 
 const Navbar = () => {
+  const router = useRouter(); // Use useRouter hook
+
+  // Function to handle category selection
+  const handleCategoryChange = (value: string) => {
+    // Programmatically navigate to the category route
+    router.push(`/products`);
+    console.log(value);
+  };
+
   return (
     <Container>
       <nav className="py-8 flex justify-between items-center gap-x-36">
@@ -63,36 +72,37 @@ const Navbar = () => {
             width={750}
             height={600}
             className="w-36 h-20"
-          ></Image>
+          />
         </div>
 
         {/* nav link and search bar */}
         <div className="flex-1 flex items-center justify-center gap-10">
           {/* search */}
-          <div className="flex w-1/2 items-center relative ">
-            <Input type="email" placeholder="Search" className="pl-10" />
+          <div className="flex w-1/2 items-center relative">
+            <Input type="text" placeholder="Search" className="pl-10" />
             <Search className="absolute left-2 font-light" size={20} />
-            <Button type="submit" className="absolute bg-primary-color right-0 rounded-l-none">
+            <Button
+              type="submit"
+              className="absolute bg-primary-color right-0 rounded-l-none"
+            >
               Search
             </Button>
           </div>
 
-          {/* navLinbks */}
+          {/* navLinks */}
           <nav>
-            <ul className="flex gap-8 items-center text-light-black ">
+            <ul className="flex gap-8 items-center text-light-black">
               <li>
-                <Select>
+                <Select onValueChange={handleCategoryChange}>
                   <SelectTrigger className="min-w-fit gap-2">
                     <SelectValue placeholder="All Category" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      {categories?.map((category,inx) => (
-                        <Link key={inx} href={category?.value}>
-                          <SelectItem value="apple" >
-                            {category?.label}
-                          </SelectItem>
-                        </Link>
+                      {categories?.map((category, inx) => (
+                        <SelectItem key={inx} value={category?.value}>
+                          {category?.label}
+                        </SelectItem>
                       ))}
                     </SelectGroup>
                   </SelectContent>
