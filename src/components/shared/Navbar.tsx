@@ -94,7 +94,7 @@ const Navbar = () => {
             <ul className="flex gap-8 items-center text-light-black">
               <li>
                 <Select onValueChange={handleCategoryChange}>
-                  <SelectTrigger className="min-w-fit gap-2">
+                  <SelectTrigger className="min-w-fit gap-2 border-none">
                     <SelectValue placeholder="All Category" />
                   </SelectTrigger>
                   <SelectContent>
