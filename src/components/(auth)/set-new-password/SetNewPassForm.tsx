@@ -24,8 +24,7 @@ const SetNewPassForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-
-  const onSubmit = (data: FormData) => {
+      const onSubmit = (data: FormData) => {
     console.log(data);
     router.push("/sign-in")
   };
