@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Container from "./Container";
 import logo from "@/assets/images/logo.png";
@@ -67,13 +67,13 @@ const Navbar = () => {
         {/* logo image */}
         <div>
           <Link href={"/"}>
-          <Image
-            src={logo}
-            alt="logo"
-            width={750}
-            height={600}
-            className="w-36 h-20"
-          />
+            <Image
+              src={logo}
+              alt="logo"
+              width={750}
+              height={600}
+              className="w-36 h-20"
+            />
           </Link>
         </div>
 
@@ -81,8 +81,15 @@ const Navbar = () => {
         <div className="flex-1 flex items-center justify-center gap-10">
           {/* search */}
           <div className="flex w-1/2 items-center relative">
-            <Input type="text" placeholder="Search" className="pl-10 rounded-full" />
-            <Search className="absolute left-4 font-light border-none" size={20} />
+            <Input
+              type="text"
+              placeholder="Search"
+              className="pl-10 rounded-full"
+            />
+            <Search
+              className="absolute left-4 font-light border-none"
+              size={20}
+            />
             <Button
               type="submit"
               className="absolute bg-primary-color right-0 rounded-l-none rounded-r-full"
@@ -122,7 +129,7 @@ const Navbar = () => {
 
         {/* nav icons */}
         <div className="flex items-center gap-3">
-          <Link href={"/favorite"}>
+          <Link href={"/favorite-products"}>
             <Heart />
           </Link>
           <Link href={"/shopping-cart"}>

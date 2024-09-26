@@ -139,13 +139,15 @@ const ShoppingCartContainer = () => {
         <Card>
           <CardHeader>
             <CardTitle className="font-semibold text-xl">Cart Total</CardTitle>
+          </CardHeader>
+          <CardContent>
             <div>
               <div className="flex justify-between py-5">
                 <p>Subtotal:</p>
                 <p className="font-medium">$84.00</p>
               </div>
               <hr />
-              <div className="flex justify-between py-5">
+              <div className="flex justify-between ">
                 <p>Shipping:</p>
                 <p className="font-medium">Free</p>
               </div>
@@ -155,12 +157,13 @@ const ShoppingCartContainer = () => {
                 <p className="font-medium">$84.00</p>
               </div>
             </div>
-          </CardHeader>
-          <CardContent>{/*  */}</CardContent>
+          </CardContent>
           <CardFooter>
-            <Button className="bg-primary-color w-full rounded-full">
-              Proceed to checkout
-            </Button>
+            <Link href={"/checkout"} className="w-full">
+              <Button className="bg-primary-color w-full rounded-full">
+                Proceed to checkout
+              </Button>
+            </Link>
           </CardFooter>
         </Card>
       </div>
