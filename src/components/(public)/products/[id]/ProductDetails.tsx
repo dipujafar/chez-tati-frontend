@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Rating } from "@/components/ui/rating";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 const productDetailsImage = [
   {
@@ -134,9 +135,11 @@ const ProductDetailsContainer = () => {
             </div>
 
             {/* checkout btn */}
-            <Button disabled={quantity === 0} className="flex-1 rounded-full bg-primary-color">
+            <Link href={"/checkout"} className="flex-1">
+            <Button disabled={quantity === 0} className=" w-full rounded-full bg-primary-color">
               Checkout
             </Button>
+            </Link>
 
             <div className="p-3 rounded-full bg-light-gray">
               <ShoppingCart size={18} />

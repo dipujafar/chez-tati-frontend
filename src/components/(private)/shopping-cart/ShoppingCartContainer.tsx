@@ -147,7 +147,7 @@ const ShoppingCartContainer = () => {
                 <p className="font-medium">$84.00</p>
               </div>
               <hr />
-              <div className="flex justify-between ">
+              <div className="flex justify-between py-5">
                 <p>Shipping:</p>
                 <p className="font-medium">Free</p>
               </div>

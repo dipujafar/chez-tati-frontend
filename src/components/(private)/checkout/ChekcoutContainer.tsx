@@ -107,7 +107,6 @@ const ChekcoutContainer = () => {
                   <Label>Phone</Label>
                   <Input id="lastName" placeholder="Phone number" />
                 </div>
-               
               </div>
             </div>
           </form>
@@ -123,7 +122,7 @@ const ChekcoutContainer = () => {
           <CardContent>
             {/* products information */}
             <div>
-              <div className="flex justify-between items-center ">
+              <div className="flex justify-between items-center pb-5 ">
                 <div className="flex items-center gap-2">
                   <Image
                     src={"/freezerImage.png"}
@@ -163,11 +162,9 @@ const ChekcoutContainer = () => {
             </RadioGroup>
           </CardContent>
           <CardFooter>
-            <Link href={"/checkout"} className="w-full">
-              <Button className="bg-primary-color w-full rounded-full">
-                Place Order
-              </Button>
-            </Link>
+            <Button className="bg-primary-color w-full rounded-full">
+              Place Order
+            </Button>
           </CardFooter>
         </Card>
       </div>
