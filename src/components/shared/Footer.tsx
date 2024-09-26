@@ -52,13 +52,13 @@ const Footer = () => {
                   <Link href="/sign-in">Login / Register</Link>
                 </li>
                 <li>
-                  <Link href="/cart">Cart</Link>
+                  <Link href="/shopping-cart">Cart</Link>
                 </li>
                 <li>
-                  <Link href="#">Wishlist</Link>
+                  <Link href="/favorite-products">Wishlist</Link>
                 </li>
                 <li>
-                  <Link href="#">Shop</Link>
+                  <Link href="/products">Shop</Link>
                 </li>
               </ul>
             </div>
@@ -70,16 +70,14 @@ const Footer = () => {
               </h3>
               <ul className="text-primary-white space-y-2">
                 <li>
-                  <Link href="#">Privacy Policy</Link>
+                  <Link href="/privacy-policy">Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link href="#">Terms Of Use</Link>
+                  <Link href="/terms-condition">Terms Of Use</Link>
                 </li>
+
                 <li>
-                  <Link href="#">FAQ</Link>
-                </li>
-                <li>
-                  <Link href="#">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </div>

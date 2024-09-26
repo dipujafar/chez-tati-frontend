@@ -78,8 +78,8 @@ const HeroSection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute left-0 bg-primary-color text-primary-white" />
-              <CarouselNext className="absolute right-0 bg-primary-color text-primary-white" />
+              <CarouselPrevious className="absolute left-1 bg-primary-color text-primary-white" />
+              <CarouselNext className="absolute right-1 bg-primary-color text-primary-white" />
             </Carousel>
           </div>
           <div className="space-y-3">
