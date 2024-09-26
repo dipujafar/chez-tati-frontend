@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "@/components/shared/Container";
+import { Rating } from "@/components/ui/rating";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -31,6 +32,14 @@ const testimonials: Testimonial[] = [
   },
   {
     image: "/user3.jpg",
+    feedback:
+      "I would gladly pay over 600 dollars for your service. I am really satisfied with the results!",
+    rating: 4,
+    name: "Anna B.",
+    title: "Backpacker",
+  },
+  {
+    image: "/customer1.png",
     feedback:
       "I would gladly pay over 600 dollars for your service. I am really satisfied with the results!",
     rating: 4,
@@ -121,13 +130,7 @@ const Feedbacks = () => {
 
                 {/* Rating */}
                 <div className="flex items-center mb-4">
-                  {Array.from({ length: currentTestimonial.rating }).map(
-                    (_, index) => (
-                      <span key={index} className="text-yellow-500 text-lg">
-                        ⭐
-                      </span>
-                    )
-                  )}
+                  <Rating rating={5} className="w-24"></Rating>
                 </div>
                 <hr />
                 {/* Name and Title */}

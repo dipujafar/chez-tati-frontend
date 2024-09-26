@@ -13,7 +13,7 @@ const TopbarBanner = () => {
           <div className="h-full flex gap-3 items-center">
             <House color="#fff" /> 
             <ChevronRight color="#fff" />
-            <p className="text-primary-white capitalize">{pathName ? pathName?.replaceAll("/", " ").replaceAll("-", " "): " "}</p>
+            <p className="text-primary-white capitalize">{pathName ? pathName.split("/")[1]?.replaceAll("/", " ").replaceAll("-", " "): " "}</p>
             
           </div>
         </Container>
