@@ -63,9 +63,10 @@ const Navbar = () => {
 
   return (
     <Container>
-      <nav className="py-6 flex justify-between items-center gap-x-36">
+      <nav className="py-7 flex justify-between items-center gap-x-36">
         {/* logo image */}
         <div>
+          <Link href={"/"}>
           <Image
             src={logo}
             alt="logo"
@@ -73,14 +74,15 @@ const Navbar = () => {
             height={600}
             className="w-36 h-20"
           />
+          </Link>
         </div>
 
         {/* nav link and search bar */}
         <div className="flex-1 flex items-center justify-center gap-10">
           {/* search */}
           <div className="flex w-1/2 items-center relative">
-            <Input type="text" placeholder="Search" className="pl-10" />
-            <Search className="absolute left-2 font-light border-none" size={20} />
+            <Input type="text" placeholder="Search" className="pl-10 rounded-full" />
+            <Search className="absolute left-4 font-light border-none" size={20} />
             <Button
               type="submit"
               className="absolute bg-primary-color right-0 rounded-l-none rounded-r-full"
@@ -123,7 +125,7 @@ const Navbar = () => {
           <Link href={"/favorite"}>
             <Heart />
           </Link>
-          <Link href={"/cart"}>
+          <Link href={"/shopping-cart"}>
             <ShoppingCart />
           </Link>
           <Link href={"/profile"}>

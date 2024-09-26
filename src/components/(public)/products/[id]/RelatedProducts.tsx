@@ -13,7 +13,7 @@ const RelatedProducts = () => {
       {/* display produts */}
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-5 gap-y-5 justify-between">
         {products?.slice(0, 4).map((product, inx) => (
-          <Card className="w-[350px]">
+          <Card key={inx} className="w-[350px]">
             <CardContent className="relative">
               <Image
                 src={product?.image}
@@ -29,6 +29,11 @@ const RelatedProducts = () => {
                 {product?.discount && (
                   <div className="absolute top-2 left-2 px-2 py-1 rounded-md bg-primary-color text-primary-white flex justify-center items-center group">
                     Sale {product?.discount}% off
+                  </div>
+                )}
+                {inx === 3 && (
+                  <div className="absolute top-2 left-2 px-2 py-1 rounded-md bg-primary-black text-primary-white flex justify-center items-center group">
+                    Out of Stock
                   </div>
                 )}
               </div>

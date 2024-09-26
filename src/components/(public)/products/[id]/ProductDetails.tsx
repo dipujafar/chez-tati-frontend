@@ -114,7 +114,7 @@ const ProductDetailsContainer = () => {
           {/* checkout */}
           <div className="mt-7 flex items-center gap-x-3">
             {/* quantity */}
-            <div className="  border-2 rounded-full flex items-center gap-x-3">
+            <div className="  border-2 px-2 py-1 rounded-full flex items-center gap-x-3">
               <button
                 onClick={() => setQuantity(quantity - 1)}
                 className={`  bg-light-gray ${
@@ -134,7 +134,7 @@ const ProductDetailsContainer = () => {
             </div>
 
             {/* checkout btn */}
-            <Button className="flex-1 rounded-full bg-primary-color">
+            <Button disabled={quantity === 0} className="flex-1 rounded-full bg-primary-color">
               Checkout
             </Button>
 
